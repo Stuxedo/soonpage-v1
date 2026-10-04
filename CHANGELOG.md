@@ -1,114 +1,15 @@
 # Changelog
 
-All notable changes to Coming Soon Page are documented here.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
-
-## v1.2.2
-
-### Changed
-
-- The footer's copyright year is worked out automatically: the start year alone in the first year, then START–CURRENT
-
-## v1.2.1
-
-### Changed
-
-- The copyright line reads Stux.Group instead of Stux Group Ltd
-
-### Fixed
-
-- The footer's Created-with icons are optically sized, so the heart no longer looks bigger than the code and coffee icons
-
-## v1.2.0
-
-### Added
-
-- A dev-mode banner, the shared Stux site banner, shown on every page while `dev-server.sh`/`.bat` runs; `?banner=soon,maintenance,site` previews the other banner types locally, and production never shows one (`assets/site-banner.css`, `assets/site-banner.js`, `assets/site-banners.js`, `assets/dev-mode.js`)
-- A "Created with love / code / coffee by Stuxedo" line in the footer of every page
-- `/sitemap` (an HTML page in the site's layout listing every page) and `sitemap.xml`, committed as static files and regenerated with `python scripts/build-sitemap.py` (`lastmod` comes from each page's last git commit); `robots.txt` points at it and the footer links to it
-
-### Changed
-
-- `dev-server.sh`/`.bat` serve the site the way GitHub Pages does (`/changelog` for `changelog.html`, the 404 page for missing paths) through `.github/dev-router.php`, turn DEV_MODE on by default (`--no-dev-mode` to preview production), and run on PHP 7.4 like the other Stux projects (`PHP_BIN`, `php74`, or `%LOCALAPPDATA%\Programs\PHP\7.4`, with a warning otherwise)
-- The copyright symbol in the footers is an icon, with a visually hidden "©" so screen readers still read it
-
-### Removed
-
-- The "Powered by Stuxedo" badge in the footer: this page is served by GitHub Pages (see `CNAME`), not by Stuxedo hosting (and on a Stuxedo page it was redundant)
-
-## v1.1.6
-
-### Changed
-- `changelog.html` now sorts each release's `###` sections into a fixed order — Added, Changed, Fixed, Removed, Security, Deprecated — at render time, rather than trusting the order `CHANGELOG.md` lists them in; unknown section types go last
-- Changelog type badges now use the fixed family palette — Added `#2ecc71`, Changed `#3ba7ff`, Fixed `#ffa64d`, Removed `#ff4d4d`, Security `#b06bff`, Deprecated `#8a8a94` — as tinted badges (coloured text on a light tint of the same hue), with darker variants of each for the light theme
-- CHANGELOG sections reordered to Added, Changed, Fixed, Removed, Security, Deprecated
-
-## v1.1.5
-
-### Fixed
-- The footer's changelog/version link (and other footer links) turned accent-purple once visited — `a:visited` carries a pseudo-class, giving it higher CSS specificity than the plain `footer a` selector meant to keep footer links muted, so it kept winning regardless of source order. Every affected footer link now also styles `footer a:visited` explicitly.
-
-## v1.1.4
-
-### Fixed
-- The headline read "This service/instance/project/website is" — an overly long, non-standard variant that also got visually cut off on smaller viewports. Changed to "This service and/or website is", matching the convention already used on StuxAPIs' and Stux.Dev's soonpage/maintenancepage.
-
-## v1.1.3
-
-### Fixed
-- GitHub Pages was using the legacy branch-deploy build system, which can silently stop auto-deploying with no error recorded anywhere (discovered on SeasonalOverlaysLibrary — its live site served stale content for over an hour with no visible failure). Switched to GitHub Actions-based Pages deployment (`.github/workflows/pages.yml`), making every deploy an ordinary, observable CI run instead.
-
-## v1.1.2
-
-### Removed
-
-- The "A Stux.Cloud Service" credit link &mdash; Stux.Cloud and Stuxedo are instances, not services, so they don't get a service/project credit badge
-
-## v1.1.1
-
-### Changed
-
-- Heading now reads "This service/instance/project/website", since this page is reused across any of those, not just a website
-
-## v1.1.0
-
-### Added
-
-- Self-hosted Exo 2, Barlow and Inter font files under `assets/fonts/`, replacing the Google Fonts CDN link
-- A "Boring Legal Stuff" legal hub (`legal.html` + `legal/`: privacy, terms, cookies, imprint, disclaimer, opt-out)
-- `changelog.html`, which fetches and renders `CHANGELOG.md` at runtime
-- A version indicator in the footer, fetched live from `VERSION.md`
-- Cross-origin `postMessage` title sync, so a page embedding this one in an iframe can mirror this page's `<title>`
-- `dev-server.sh` / `dev-server.bat` for local previewing
-- A custom `404.html` error page
-
-### Changed
-
-- General contact switched from `support@stuxedo.com` to `hello@stuxedo.com`
-
-## v1.0.3
-
-### Added
-- "A Stux.Cloud Service" credit (linking to `https://services.stux.cloud`) next to the "Powered by Stuxedo" badge.
-
-### Fixed
-- `README.md` said Stuxedo is "a part of the Stux.Group brand" directly — the actual chain is Stuxedo → Stux.Cloud → Stux Group Ltd. Corrected to name Stux.Cloud as the direct operator, with Stux Group Ltd's full registration details.
-
-## v1.0.2
-
-### Fixed
-- `README.md`'s Stux.Group brand icon URL had a leftover duplicated `/global/` path segment (`global.media.stux.group/global/icon.png`) — corrected to `https://global.media.stux.group/icon.png`
-
-## v1.0.1
-
-### Changed
-- `README.md`'s footer brand-attribution block updated to the new format (Built & Maintained by Stuxedo / Stuxedo is a part of the Stux.Group brand of businesses), replacing the older disclaimer. No "Hosted by" clause here since Stuxedo is the hosting brand itself; the redundant separate "Made by Stuxedo" line was also removed since the new footer already covers that
+All notable changes to soonpage-v1 are documented here.
 
 ## v1.0.0
 
 ### Added
-- `VERSION.md` and this `CHANGELOG.md`, versioning the repo for the first time
-- `CONTRIBUTING.md`
-- `commit.sh` / `commit.bat` — commit + tag scripts that read the release version from `VERSION.md`
+
+- Archived [Stuxedo/soonpage](https://github.com/Stuxedo/soonpage) at commit `529174e` (`v1.2.2`), the last state before Stuxedo's rebrand to the tuxedo-cat logo (neon `#4bf708` on dark, deep `#032f14` on light), preserving history up to that point as this repository's own `main` branch
+
+### Changed
+
+- Served from `soonpage-v1.stuxedo.net` instead of `soonpage.stuxedo.net` (CNAME, canonical URLs, sitemap and robots.txt)
+- Logo, icon and favicon now point at the archived assets under `https://global.media.stuxedo.com/v1/` instead of the live Stuxedo brand assets, which have been replaced
+- README and CONTRIBUTING describe this repository as an archive

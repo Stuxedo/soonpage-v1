@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soonpage.stuxedo.net/sitemap.xml
+Sitemap: https://soonpage-v1.stuxedo.net/sitemap.xml
