@@ -2,6 +2,12 @@
 
 All notable changes to soonpage-v1 are documented here.
 
+## v1.0.2
+
+### Fixed
+
+- The footer's copyright line had a second, hidden copy of the © icon inside its screen-reader text; it's gone, leaving the visible icon and a plain "©" for screen readers. Nothing changes on screen
+
 ## v1.0.1
 
 ### Fixed
