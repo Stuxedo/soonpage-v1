@@ -4,6 +4,12 @@ All notable changes to soonpage-v1 are documented here.
 
 Since v26.10.23 this project uses [Date Versioning](https://datevers.ing) (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used Semantic Versioning.
 
+## v26.11.07-1
+
+### Fixed
+
+- **CI passes again.** The HTML check rejected the Discord link preview's `<script id="discord:component-embed">`, as its id has a colon. Discord looks for that exact id, so `.htmlvalidate.json` now allows it (`valid-id` in relaxed mode) instead of renaming it. CI had failed on every push since the preview was added.
+
 ## v26.11.07
 
 ### Changed
