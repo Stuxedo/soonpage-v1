@@ -24,7 +24,7 @@ Live at [soonpage-v1.stuxedo.net](https://soonpage-v1.stuxedo.net/). Its logo, i
    ./dev-server.sh        # or dev-server.bat on Windows
    ```
 
-   Then open the printed URL. You can also open `index.html` directly in your browser.
+   Then open the printed URL. Add `--lan` to open it from a phone or another device on your network: it listens on every interface instead of `127.0.0.1` only and prints the addresses to open (usually the `192.168.x.x` one). You can also open `index.html` directly in your browser.
 
 ## Scope
 

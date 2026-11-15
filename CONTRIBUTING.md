@@ -17,6 +17,10 @@ New features, redesigns, or styling changes belong in the live `soonpage` reposi
 - The icon set is `favicon.ico`, `apple-touch-icon.png`, `site.webmanifest` and `assets/img/icon-*.png`. Every page's `<head>` carries the same four tags for them (`favicon.ico`, `icon-512.png`, `apple-touch-icon.png`, `site.webmanifest`); copy them as-is into any new page
 - `bash tests/site.sh` (Python 3.8+, no dependencies) checks every preview and the icon set; CI runs it with `tests/version.sh`
 
+## Running it locally
+
+Run `./dev-server.sh` (or `dev-server.bat` on Windows) and open the printed URL. Add `--lan` to open it from a phone or another device on your network: it listens on every interface instead of `127.0.0.1` only and prints the addresses to open (usually the `192.168.x.x` one).
+
 ## Branches
 
 - Work on `test`, or on a feature branch off it. Never push to `main`
