@@ -10,7 +10,7 @@ where the site has one). A preview over Discord's 3,000-byte limit is left out (
 instead), and Discord falls back to the page's title and description.
 Spec: https://docs.discord.com/developers/link-previews/component-embeds
 
-Copyright (c) Stux.Group. All Rights Reserved.
+Copyright (c) Stuxedo. All Rights Reserved.
 """
 import html
 import json

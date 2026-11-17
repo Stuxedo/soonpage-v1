@@ -9,7 +9,7 @@ the site's production address.
 It then runs build-discord-embeds.py, so every page's Discord preview (the sitemap page's
 included) is current.
 
-Copyright (c) Stux.Group. All Rights Reserved.
+Copyright (c) Stuxedo. All Rights Reserved.
 """
 import html
 import re
